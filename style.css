@@ -97,23 +97,40 @@ body{
     }
 }
 
+#user-status {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
 #section-actions {
     display: flex;
     justify-content: center;
 
     #btn-save {
-    background-color: var(--main-font-color);
-    color: var(--main-bg-color);
-    font-weight: 600;
-    border: none;
-    padding: 0.5rem 1.8rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2rem;
+        background-color: var(--main-font-color);
+        color: var(--main-bg-color);
+        font-weight: 600;
+        border: none;
+        padding: 0.5rem 1.8rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.2rem;
+        margin-right: 1rem;
 
     &:hover {
         background-color: var(--btn-hover-color);
     }
 }
+
+    #btn-reset {
+        background: none;
+        border: none;
+        color: var(--main-font-color);
+        cursor: pointer;
+
+        &:hover {
+            color: var(--btn-hover-color);
+        }
+    }
 }
 

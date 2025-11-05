@@ -22,22 +22,27 @@
     <hr class="divider">
 
     <!--Form fields-->
+    <!--Name-->
     <div id="field-name">
       <label for="input-name" >Name</label>
       <input id="input-name" name="name" type="text" placeholder="Write your name"/>
     </div>
+
+    <!--Age-->
     <div id="field-age">
       <label for="input-age">Age</label>
       <input id="input-age" name="age" type="number" min="0" placeholder="Write your age"/>
     </div>
+
+    <!--Gender-->
     <div id="field-gender">
       <label for="select-gender">Gender</label>
       <select id="select-gender" name="gender">
-        <option value="" disabled selected hidden>Choose gender</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="nonbinary">Non-binary</option>
-        <option value="unspecified">Prefer not to say</option>
+        <option value="" disabled selected >Choose gender</option>
+        <option value="male" >Male</option>
+        <option value="female" >Female</option>
+        <option value="nonbinary" >Non-binary</option>
+        <option value="unspecified" >Prefer not to say</option>
       </select>
     </div>
 
@@ -46,10 +51,11 @@
     <!--Allow location-->
     <div id="location-granted">
       <h3>Allow location</h3>
-      <label for="checkbox-location">Ja
-         <input id="checkbox-location" name="allow_location" type="checkbox" />
-      <label for="checkbox-location">Nej
-         <input id="checkbox-location" name="allow_location" type="checkbox" />
+      <label>
+         <input class="checkbox-location" name="allow_location" type="radio" value="yes" /> Yes
+      </label>
+      <label>
+         <input class="checkbox-location" name="allow_location" type="radio" /> No
     </div>
 
     <!--Clothing preferences-->
@@ -88,8 +94,11 @@
 
     </div>
 
+    <p id="user-status"></p>
+
     <div id="section-actions">
-      <button id="btn-save">Save</button>
+      <button id="btn-save" type="submit">Save</button>
+      <button id="btn-reset" type="button">Reset All</button>
     </div>
 
   </form>
