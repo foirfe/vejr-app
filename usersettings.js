@@ -63,9 +63,8 @@ setTimeout(() => (statusText.textContent = ''), 5000);
 });
 
 
-//Fungerer ikke lige - skal vi vende tilbage til
 closeBtn.addEventListener('click', () => {
-    form.classList.add('hidden');
+    window.location.href = 'index.html';
 });
 
 
