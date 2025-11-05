@@ -65,6 +65,7 @@ body{
     border: none;
     border-radius: 5px;
     float: right;
+    width: clamp(200px, 70%, 420px)
 }
 
 #location-granted {

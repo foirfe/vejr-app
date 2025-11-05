@@ -16,7 +16,7 @@
   <form id="user-settings">
     <div id="section-header">
       <h1>USER SETTINGS</h1>
-      <i class="fa-light fa-xmark"></i>
+      <i class="fa-solid fa-xmark"></i>
     </div>
 
     <hr class="divider">
@@ -33,6 +33,7 @@
     <div id="field-gender">
       <label for="select-gender">Gender</label>
       <select id="select-gender" name="gender">
+        <option value="" disabled selected hidden>Choose gender</option>
         <option value="male">Male</option>
         <option value="female">Female</option>
         <option value="nonbinary">Non-binary</option>
@@ -46,9 +47,9 @@
     <div id="location-granted">
       <h3>Allow location</h3>
       <label for="checkbox-location">Ja
-         <input id="checkbox-location" name="allow_location" type="checkbox" checked/>
+         <input id="checkbox-location" name="allow_location" type="checkbox" />
       <label for="checkbox-location">Nej
-         <input id="checkbox-location" name="allow_location" type="checkbox" checked/>
+         <input id="checkbox-location" name="allow_location" type="checkbox" />
     </div>
 
     <!--Clothing preferences-->
