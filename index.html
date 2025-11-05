@@ -4,11 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sono&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7b017d5d42.js" crossorigin="anonymous"></script>    <title>Weather App</title>
 </head>
 <body>
-    
-    <script src="usersettings.js"></script>
-    <script src="script.js"></script>
+    <section id="intro-header">
+    <h1>Welcome <span id="userName"></span></h1>
+    <h2 id="current-date"></h2>
+    <a href="usersettings.html"><i class="fa-solid fa-gear"></i></a>
+    </section>
+    <section id="current-weather">
+    <div id="location-and-search">
+        <div id="location">
+            <i class="fa-solid fa-location-dot"></i>
+            <select name="cities">
+            <option>Kolding</option>
+            <!-- Dynamic options depending on user favorites and/or location -->
+            </select>
+            <i class="fa-regular fa-star"></i>
+            <div id="search"><input type="search"></div>
+        </div>
+    </div>
+    <div id="current-weather-conditions">
+    <div id="weather-temp-condition">
+    <img src="" alt="">
+    <p id="current-temp">°C</p>
+    <p id="condition"></p>
+    </div>
+    <p id="temp-feels-like"></p>
+    </div>
+    </section>
+    <section id="hourly-forecast">
+        <div class="hourly-weather">
+            <p>12.00</p>
+            <img src="" alt="">
+        </div>
+    </section>
+    <section id="precip-today"></section>
+    <section id="clothes-suggestions-section">
+        <h2>Today's Suggestions</h2>
+         <a href="usersettings.html"><i class="fa-solid fa-gear"></i></a>
+         <div id="clothes-suggestions"></div>
+    </section>
+    <section id="extra-information">
+        <div class="information-box" id="wind-information"></div>
+        <div class="information-box" id="uv-information"></div>
+        <div class="information-box" id="humidity-information"></div>
+        <div class="information-box" id="visibility-information"></div>
+    </section>
+    <section id="upcoming-days-forecast">
+        <h2>5-day forecast</h2>
+        <div class="upcoming-day">
+            <p>Weekday</p>
+            <img src="" alt="">
+            <p>0%</p>
+            <p>4/ms</p>
+            <p>7</p>
+            <p>15</p>
+        </div>
+    </section>
+    <script src="usersettings.js"></script> 
+    <script src="global.js"></script>
+    <script src="search.js"></script>
+    <script src="currentweather.js"></script>
+    <script src="clothessuggestion.js"></script>
+    <script src="upcomingdays.js"></script>
 </body>
 </html>

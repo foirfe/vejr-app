@@ -1,7 +1,16 @@
 /* STYLES */
-
+:root{
+    --main-bg-color: #306eb5;
+    --secondary-bg-color: #9BBFE0;
+    --primary-font: "Sono";
+    --main-font-color: #ffff;
+}
 /* GLOBAL */
-
+body{
+    background: var(--main-bg-color);
+    color: var(--main-font-color);
+    font-family: var(--primary-font);
+}
 /* FRONT PAGE */
 
 /* USER SETTINGS */
