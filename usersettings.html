@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>User Settings | Weather App</title>
+</head>
+<body>
+  <form id="user-settings">
+  <div id="section-header">
+    <h1>USER SETTINGS</h1>
+  </div>
+  <div id="field-name">
+    <label for="input-name">Name</label>
+    <input id="input-name" name="name" type="text" />
+  </div>
+  <div id="field-age">
+    <label for="input-age">Age</label>
+    <input id="input-age" name="age" type="number" min="0" />
+  </div>
+  <div id="field-gender">
+    <label for="select-gender">Gender</label>
+    <select id="select-gender" name="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="nonbinary">Non-binary</option>
+      <option value="unspecified">Prefer not to say</option>
+    </select>
+  </div>
+  <div id="section-preferences">
+    <h2>Clothing Preferences</h2>
+    <div id="pref-gender-based">
+      <input
+        id="radio-gender-based"
+        name="clothing_pref"
+        type="radio"
+        value="gender_based"
+        checked
+      />
+      <label for="radio-gender-based">Show clothing suggestions based on my gender</label>
+    </div>
+    <div id="pref-gender-neutral">
+      <input
+        id="radio-gender-neutral"
+        name="clothing_pref"
+        type="radio"
+        value="gender_neutral"
+      />
+      <label for="radio-gender-neutral">Show only gender-neutral clothing</label>
+    </div>
+    <div id="pref-all">
+      <input
+        id="radio-all"
+        name="clothing_pref"
+        type="radio"
+        value="all"
+      />
+      <label for="radio-all">Show all clothing suggestions</label>
+    </div>
+  </div>
+  <div id="section-actions">
+    <button id="btn-save">Save</button>
+  </div>
+</form>
+    </div>
+    <script src="usersettings.js"></script>
+</body>
+</html>
