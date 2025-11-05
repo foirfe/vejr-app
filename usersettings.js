@@ -1,5 +1,6 @@
 //USER SETTINGS
 
+    const closeBtn = document.getElementById('close-settings');
     const form = document.getElementById('user-settings');
     const nameInput = document.getElementById('input-name');
     const ageInput = document.getElementById('input-age');
@@ -59,6 +60,12 @@ localStorage.removeItem('userData');
 form.reset();
 statusText.textContent = 'All data reset!';
 setTimeout(() => (statusText.textContent = ''), 5000);
+});
+
+
+//Fungerer ikke lige - skal vi vende tilbage til
+closeBtn.addEventListener('click', () => {
+    form.classList.add('hidden');
 });
 
 
