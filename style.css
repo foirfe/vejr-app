@@ -18,13 +18,100 @@ body{
     background: var(--main-bg-color);
     color: var(--main-font-color);
     font-family: var(--primary-font);
-    padding: 3rem 5rem;
 }
 /* FRONT PAGE */
+#intro-header{
+    display: flex;
+    justify-content: space-between;
+    margin: 3% 2%;
+}
+ a:visited {
+  color: inherit;
+}
+
+.dashboard {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "current"
+    "hourly"
+    "precip"
+    "clothes"
+    "extra"
+    "upcoming";
+}
+
+/* map areas */
+#current-weather { grid-area: current; }
+#hourly-forecast { grid-area: hourly; }
+#clothes-suggestions-section { grid-area: clothes; }
+#precip-today {grid-area: precip;}
+#extra-information { grid-area: extra; }
+#upcoming-days-forecast { grid-area: upcoming; }
+
+/* Desktop*/
+@media (min-width: 992px) {
+  .dashboard {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "current clothes"
+      "hourly  hourly"
+      "precip precip"
+      "extra   extra"
+      "upcoming upcoming";
+    align-items: start;
+  }
+}
+
 /* CURRENT WEATHER AND SEARCH */
+#current-weather{
+    margin: 0 auto;
+    display: flex;
+    color: var(--dark-font-color);
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    #current-weather-conditions{
+        text-align: center;
+    }
+}
+.box-style{
+    background-color: var(--secondary-bg-color);
+     border-radius: 8px;
+    box-shadow: rgba(50, 50, 93) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+#location-and-search{
+    padding: 5%;
+}
+#location-and-search select[name="cities"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='black' d='M0 0l5 6 5-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 10px 6px;
+}
+#location select{
+appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: var(--primary-font);
+  color: inherit;
+  cursor: pointer;
+}
+
 #search {
   position: relative;
   display: inline-block;
+  margin: 5% auto;
 }
 #search input {
   padding-left: 28px;
@@ -113,10 +200,57 @@ body{
 
 
 /* CLOTHES RECOMMENDATION */
+#clothes-suggestions-section{
+    color: var(--dark-font-color);
+    width: 90%;
+    margin: 0 auto;
+    padding: 1%;
+    #clothes-suggestions-header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+#clothes-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+        .clothes-item {
+            width: 100px;      
+            height: 100px;     
+            background: #e6eef4;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+                img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain; /* keeps aspect ratio, no squish */
+                }
+}
+}
+}
+@media (min-width: 992px) {
+  .dashboard {
+    grid-template-columns: 30% 70%;              
+    grid-template-areas:
+      "current clothes"
+      "hourly  hourly"
+      "precip  precip"
+      "extra   extra"
+      "upcoming upcoming";
+    align-items: stretch;
+  }
+}
+
+
 
 /* CURRENT WEATHER DETAILS */
 
 #extra-information {
+padding: 2%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
@@ -127,6 +261,7 @@ body{
 
 #extra-information .information-box {
   background-color: var(--btn-hover-color);
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: var(--dark-font-color);
   padding: 1rem;
   border-radius: 5px;
@@ -164,7 +299,60 @@ body{
 
 
 /* 5-DAY FORECAST */
-
+#upcoming-days-forecast {
+    padding: 2%;
+    background-color: var(--background-color);
+    border-radius: 8px;
+  }
+  
+  #upcoming-days-forecast h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+  }
+  
+  /* Rækker for hver dag */
+  .upcoming-day {
+    display: grid;
+    grid-template-columns: repeat(6, auto); /* 6 kolonner, lige brede */
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* streg mellem dagene */
+  }
+  
+  .upcoming-day:last-child {
+    border-bottom: none;
+  }
+  
+  /* Tekst og ikoner */
+  .upcoming-day p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    text-align: left;
+    
+  }
+  
+  .upcoming-day img {
+    width: 32px;
+    height: 32px;
+    justify-self: center;
+  }
+  
+  /* Mobilversion */
+  @media (max-width: 600px) {
+    .upcoming-day {
+      grid-template-columns: repeat(6, 1fr); /* behold samme antal kolonner, men mindre gap */
+      gap: 2px;
+      font-size: 0.8rem;
+    }
+  
+    .upcoming-day img {
+      width: 24px;
+      height: 24px;
+    }
+  }
 
 
 /* USER SETTINGS */

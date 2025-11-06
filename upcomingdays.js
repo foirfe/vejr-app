@@ -8,14 +8,9 @@ function renderForecast(days) {
   var oldItems = upcomingDaysSection.querySelectorAll(".upcoming-day");
   oldItems.forEach(function (el) { el.remove(); });
   //FOREACH LOOP THAT RENDERS THE DAYS
-  days.forEach(function(day, index) {
+  days.forEach(function(day) {
     var date = new Date(day.date);
-    var weekday;
-    if (index === 0) {
-        weekday = "Today";
-    } else {
-        weekday = date.toLocaleDateString("en-US", { weekday: "long" });
-    }
+        weekday = date.toLocaleDateString("en-US", { weekday: "short" });
     var icon = day.day.condition.icon;
     var rain = day.day.daily_chance_of_rain + "%";
     var wind = Math.round(day.day.maxwind_kph / 3.6) + " m/s";

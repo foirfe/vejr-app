@@ -26,6 +26,10 @@
     {"id": "winter_jacket_m", "name": "Winter Jacket", "gender": "male","type":"outer", "tags": ["snow", "cold"], "image": "/assets/mand/mandvinterjakke.png"},
     {"id": "rain_coat", "name": "Rain Coat", "gender": "neutral", "type": "outer", "tags": ["rain"], "image": "/assets/non-binary/neutralefterforregnjakke.png"},
     {"id": "winter_jacket_n", "name": "Winter Jacket", "gender": "neutral", "type":"outer", "tags": ["snow", "cold"], "image":"/assets/non-binary/neutralvinterjakke.png"},
-    {"id": "t_shirt", "name": "T-Shirt", "gender": "male","type": "top", "tags": ["hot","sunny"], "image": "/assets/mand/mandsommertshirt.png"}
+    {"id": "t_shirt_m", "name": "T-Shirt", "gender": "male","type": "top", "tags": ["hot","sunny"], "image": "/assets/mand/mandsommertshirt.png"},
+    {"id": "winter_pants_f", "name": "Winter Pants", "gender": "female", "type":"bottom", "tags":["cold", "mild", "snow"], "image":"/assets/kvinde/kvindevinterbukser.png"},
+    {"id": "autumn_pants_n", "name": "Autumn Pants", "gender": "neutral", "type": "bottom", "tags": ["mild"], "image":"/assets/non-binary/neutralefterforbukser.png"},
+    {"id": "t_shirt_n", "name": "T-Shirt", "gender": "neutral", "type": "top", "tags": ["hot", "sunny"], "image":"/assets/non-binary/neutralsommertshirt.png"},
+    {"id": "winter_pants_n", "name": "Winter Pants", "gender":"neutral", "type": "bottom", "tags":["cold", "snow"], "image":"/assets/non-binary/neutralvinterbukser.png"}
   ]
 }

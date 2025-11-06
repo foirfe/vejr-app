@@ -69,6 +69,7 @@
     // Styling for resultlist
     Object.assign(resultsList.style, {
       position: "absolute",
+      color: "#fff",
       left: 0,
       right: 0,
       top: "calc(100% + 6px)",

@@ -18,69 +18,74 @@
         </div>
         <a href="usersettings.html"><i class="fa-solid fa-gear"></i></a>
     </section>
-
-    <section id="current-weather">
-        <div id="location-and-search">
-            <div id="location">
-                <i class="fa-solid fa-location-dot"></i>
-                <select name="cities">
-                <option>Kolding</option>
-                <!-- Dynamic options depending on user favorites and/or location -->
-                </select>
-                <i class="fa-regular fa-star"></i> 
+    <main class="dashboard">
+        <section id="current-weather" class="box-style">
+            <div id="location-and-search">
+                <div id="location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <select name="cities">
+                        <option data-lon="9.46" data-lat="55.49" data-region="Syddanmark" data-country="Denmark">Kolding</option>
+                        <!-- Dynamic options depending on user favorites and/or location -->
+                    </select>
+                    <i class="fa-regular fa-star"></i> 
+                </div>
+                <div id="search">
+                    <input id="search-input" type="text" placeholder="Search city">
+                    <span class="icon">🔍</span>
+                </div>
             </div>
-             <div id="search">
-            <input id="search-input" type="text" placeholder="Search city">
-            <span class="icon">🔍</span>
+            <div id="current-weather-conditions">
+                <div id="weather-temp-condition">
+                    <img src="" alt="">
+                    <p id="current-temp">°C</p>
+                    <p id="condition"></p>
+                </div>
+                <p id="temp-feels-like"></p>
+            </div>
+        </section>
+        
+       
+            <div id="hourly-forecast">
+                <div class="hourly-weather">
+                    <p>12.00</p>
+                    <img src="" alt="">
+                </div>
+            </div>
+    
+        
+        <section id="precip-today"></section>
+        
+        <section id="clothes-suggestions-section" class="box-style">
+               <div id="clothes-suggestions-header">
+            <h2>Today's Suggestions</h2>
+            <a href="usersettings.html"><i class="fa-solid fa-gear"></i></a>
         </div>
-        </div>
-        <div id="current-weather-conditions">
-            <div id="weather-temp-condition">
+          <div id="clothes-suggestions"></div>
+        </section>
+        
+        <section id="extra-information">
+            <div class="information-box" id="wind-information"></div>
+            <div class="information-box" id="uv-information"></div>
+            <div class="information-box" id="humidity-information"></div>
+            <div class="information-box" id="visibility-information"></div>
+        </section>
+        
+        <section id="upcoming-days-forecast">
+            <h2>5-day forecast</h2>
+            <div class="upcoming-day">
+                <p>Weekday</p>
                 <img src="" alt="">
-                <p id="current-temp">°C</p>
-                <p id="condition"></p>
+                <p>0%</p>
+                <p>4/ms</p>
+                <p>7</p>
+                <p>15</p>
             </div>
-            <p id="temp-feels-like"></p>
-        </div>
-    </section>
-
-    <section id="hourly-forecast">
-        <div class="hourly-weather">
-            <p>12.00</p>
-            <img src="" alt="">
-        </div>
-    </section>
-
-    <section id="precip-today"></section>
-    
-    <section id="clothes-suggestions-section">
-        <h2>Today's Suggestions</h2>
-         <a href="usersettings.html"><i class="fa-solid fa-gear"></i></a>
-         <div id="clothes-suggestions"></div>
-    </section>
-
-    <section id="extra-information">
-        <div class="information-box" id="wind-information"></div>
-        <div class="information-box" id="uv-information"></div>
-        <div class="information-box" id="humidity-information"></div>
-        <div class="information-box" id="visibility-information"></div>
-    </section>
-    
-    <section id="upcoming-days-forecast">
-        <h2>5-day forecast</h2>
-        <div class="upcoming-day">
-            <p>Weekday</p>
-            <img src="" alt="">
-            <p>0%</p>
-            <p>4/ms</p>
-            <p>7</p>
-            <p>15</p>
-        </div>
-    </section>
-    <script src="global.js"></script>
-    <script src="search.js"></script>
-    <script src="currentweather.js"></script>
-    <script src="clothessuggestion.js"></script>
-    <script src="upcomingdays.js"></script>
-</body>
-</html>
+        </section>
+    </main>
+        <script src="global.js"></script>
+        <script src="search.js"></script>
+        <script src="currentweather.js"></script>
+        <script src="clothessuggestion.js"></script>
+        <script src="upcomingdays.js"></script>
+    </body>
+    </html>
