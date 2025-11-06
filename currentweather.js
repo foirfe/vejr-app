@@ -10,6 +10,7 @@ const windEl = document.getElementById("wind-information");
 const uvEl = document.getElementById("uv-information");
 const humidityEl = document.getElementById("humidity-information");
 const visibilityEl = document.getElementById("visibility-information");
+const precipEl = document.getElementById("precip-today");
 
 // Funktion til at hente og vise vejret
 function getCurrentWeather(cityOrCoords) {
@@ -43,6 +44,10 @@ function getCurrentWeather(cityOrCoords) {
       uvEl.textContent = "UV index: " + data.current.uv;
       humidityEl.textContent = "Humidity: " + data.current.humidity + "%";
       visibilityEl.textContent = "Visibility: " + data.current.vis_km + " km";
+
+      //Nedbør
+      precipEl.textContent = "Precipitation today: " + data.forecast.forecastday[0].day.totalprecip_mm + " mm";
+
 
       // Hourly forecast
       hourlyContainer.innerHTML = "";
