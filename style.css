@@ -21,6 +21,47 @@ body{
     padding: 3rem 5rem;
 }
 /* FRONT PAGE */
+/* CURRENT WEATHER AND SEARCH */
+#search {
+  position: relative;
+  display: inline-block;
+}
+#search input {
+  padding-left: 28px;
+  height: 32px;
+}
+
+#search .icon {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: 0.5;
+  transition: opacity 0.15s;
+}
+
+#search input.has-text + .icon {
+  opacity: 0;
+}
+
+
+/*HOURLY FORECAST*/
+
+
+
+
+
+
+
+
+/* CLOTHES RECOMMENDATION */
+
+/* CURRENT WEATHER DETAILS */
+
+/* 5-DAY FORECAST */
+
+
 
 /* USER SETTINGS */
 

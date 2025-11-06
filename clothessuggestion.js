@@ -81,7 +81,7 @@ function chooseClothes(items, flags) {
     if (found) chosen.push(found);
   }
   var onepiece = pool.find(function (item) { return item.type === "onepiece"; });
-  pick("top");
+  if (!onepiece)pick("top");
   if (!onepiece) pick("bottom");
   pick("outer");
   pick("footwear");
@@ -113,7 +113,7 @@ function renderClothesSuggestions(items) {
   items.forEach(function (item) {
     var el = document.createElement("div");
     el.className = "clothes-item";
-    el.innerHTML = '<img src="' + item.image + '" alt="' + item.name + '"><p>' + item.name + '</p>';
+    el.innerHTML = '<img src="' + item.image + '" alt="' + item.name + '">';
     box.appendChild(el);
   });
 }
