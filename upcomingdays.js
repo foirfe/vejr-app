@@ -1,22 +1,22 @@
 
 //DOM SELECTORS
-var upcomingDaysSection = document.getElementById("upcoming-days-forecast");
-var locationAndSearch = document.getElementById("location-and-search");
+let upcomingDaysSection = document.getElementById("upcoming-days-forecast");
+let locationAndSearch = document.getElementById("location-and-search");
 // KILOMETERS PER HOUR TO METERS PER SECOND
 function renderForecast(days) {
   // REMOVES PLACEHOLDERS THAT WERE USED FOR STYLING
-  var oldItems = upcomingDaysSection.querySelectorAll(".upcoming-day");
+  let oldItems = upcomingDaysSection.querySelectorAll(".upcoming-day");
   oldItems.forEach(function (el) { el.remove(); });
   //FOREACH LOOP THAT RENDERS THE DAYS
   days.forEach(function(day) {
-    var date = new Date(day.date);
+    let date = new Date(day.date);
         weekday = date.toLocaleDateString("en-US", { weekday: "short" });
-    var icon = day.day.condition.icon;
-    var rain = day.day.daily_chance_of_rain + "%";
-    var wind = Math.round(day.day.maxwind_kph / 3.6) + " m/s";
-    var tempMin = Math.round(day.day.mintemp_c) + "°";
-    var tempMax = Math.round(day.day.maxtemp_c) + "°";
-    var item = document.createElement("div");
+    let icon = day.day.condition.icon;
+    let rain = day.day.daily_chance_of_rain + "%";
+    let wind = Math.round(day.day.maxwind_kph / 3.6) + " m/s";
+    let tempMin = Math.round(day.day.mintemp_c) + "°";
+    let tempMax = Math.round(day.day.maxtemp_c) + "°";
+    let item = document.createElement("div");
     item.className = "upcoming-day";
     item.innerHTML = `
         <p>${weekday}</p>
@@ -47,30 +47,30 @@ function readSavedCity() {
 
 // IF NO LAT/LON ON FIRST OPTION IT FALLBACKS TO SEARCHING BY NAME
 function lookupCityByName(name) {
-  var url = `https://api.weatherapi.com/v1/search.json?key=${encodeURIComponent(apiKey)}&q=${encodeURIComponent(name)}`;
+  let url = `https://api.weatherapi.com/v1/search.json?key=${encodeURIComponent(apiKey)}&q=${encodeURIComponent(name)}`;
   return fetch(url)
     .then(function (r) { return r.json(); })
     .then(function (list) {
       if (!list || !list.length) return null;
-      var c = list[0];
+      let c = list[0];
       return { name: c.name, region: c.region || "", country: c.country || "", lat: c.lat, lon: c.lon };
     })
     .catch(function () { return null; });
 }
 //RENDERS THE FORECAST ON LOADUP
 function loadForecastOnStartup() {
-  var saved = readSavedCity();
+  let saved = readSavedCity();
   if (saved && saved.lat != null && saved.lon != null) {
-    var q = saved.lat + "," + saved.lon;
+    let q = saved.lat + "," + saved.lon;
     getUpcomingDays(q);
     return;
   }
   // FALLBACK: First option in the dropdown
   if (!citySelect || !citySelect.options.length) return;
-  var first = citySelect.options[0];
-  var name = first.textContent;
-  var lat = first.dataset.lat ? parseFloat(first.dataset.lat) : null;
-  var lon = first.dataset.lon ? parseFloat(first.dataset.lon) : null;
+  let first = citySelect.options[0];
+  let name = first.textContent;
+  let lat = first.dataset.lat ? parseFloat(first.dataset.lat) : null;
+  let lon = first.dataset.lon ? parseFloat(first.dataset.lon) : null;
   if (lat != null && lon != null) {
     getUpcomingDays(lat + "," + lon);
   } else {
@@ -83,8 +83,8 @@ function loadForecastOnStartup() {
 
 // REACT TO USER CHANGING CITY (FROM search.js)
 locationAndSearch.addEventListener("city:changed", function (e) {
-  var city = e.detail; 
-  var q = city.lat + "," + city.lon;
+  let city = e.detail; 
+  let q = city.lat + "," + city.lon;
   getUpcomingDays(q);
 });
 

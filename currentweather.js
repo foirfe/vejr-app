@@ -80,7 +80,7 @@ function getCurrentWeather(cityOrCoords) {
 }
 
 // Vis Kolding som default hvis currentcity ikke findes
-var currentCityLS = localStorage.getItem("currentCity")
+let currentCityLS = localStorage.getItem("currentCity")
 if(currentCityLS){
   getCurrentWeather(currentCityLS);
 } else {
