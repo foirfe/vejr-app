@@ -10,7 +10,7 @@ function renderForecast(days) {
   //FOREACH LOOP THAT RENDERS THE DAYS
   days.forEach(function(day) {
     let date = new Date(day.date);
-        weekday = date.toLocaleDateString("en-US", { weekday: "short" });
+    weekday = date.toLocaleDateString("en-US", { weekday: "short" });
     let icon = day.day.condition.icon;
     let rain = day.day.daily_chance_of_rain + "%";
     let wind = Math.round(day.day.maxwind_kph / 3.6) + " m/s";
