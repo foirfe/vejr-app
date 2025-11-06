@@ -11,7 +11,7 @@
     {"id":"sneakers", "name":"Sneakers", "gender":"male", "type": "footwear", "tags": ["hot", "sunny"],"image":"/assets/mand/mandsommersneakers.png"},
     {"id": "winter_gloves_m", "name": "Winter Gloves", "gender": "male", "type":"accessory", "tags":["cold","snow","windy"], "image":"/assets/mand/mandvinterhandsker.png"},
     {"id": "beanie_m", "name": "Beanie","gender":"male", "type":"accessory", "tags":["cold", "snow", "windy"], "image":"/assets/mand/mandvinterhue.png"},
-    {"id": "sweater_m", "name": "Sweater", "gender":"male", "type":"outer", "tags":["cold", "snow", "windy"], "image":"/assets/mand/mandvintersweater.png"},
+    {"id": "sweater_m", "name": "Sweater", "gender":"male", "type":"top", "tags":["cold", "snow", "windy"], "image":"/assets/mand/mandvintersweater.png"},
     {"id": "rubber_boots", "name": "Rubber Boots", "gender": "neutral", "type":"footwear", "tags":["rain"], "image":"/assets/non-binary/neutralefterforgummistovler.png"},
     {"id": "umbrella", "name": "Umbrella", "gender": "neutral", "type": "accessory", "tags": ["rain"], "image": "/assets/non-binary/neutralefterforparaply.png"},
     {"id": "ice_cream", "name": "Ice Cream", "gender": "neutral", "type": "accessory", "tags":["hot","sunny"], "image":"/assets/non-binary/neutralsommeris.png"},
