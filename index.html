@@ -12,38 +12,44 @@
 </head>
 <body>
     <section id="intro-header">
-    <h1>Welcome <span id="userName"></span></h1>
-    <h2 id="current-date"></h2>
-    <a href="usersettings.html"><i class="fa-solid fa-gear"></i></a>
-    </section>
-    <section id="current-weather">
-    <div id="location-and-search">
-        <div id="location">
-            <i class="fa-solid fa-location-dot"></i>
-            <select name="cities">
-            <option>Kolding</option>
-            <!-- Dynamic options depending on user favorites and/or location -->
-            </select>
-            <i class="fa-regular fa-star"></i>
-            <div id="search"><input type="search"></div>
+        <div id="welcome-date">
+            <h1>Welcome <span id="userName"></span></h1>
+            <h2 id="current-date">November 7th</h2>
         </div>
-    </div>
-    <div id="current-weather-conditions">
-    <div id="weather-temp-condition">
-    <img src="" alt="">
-    <p id="current-temp">°C</p>
-    <p id="condition"></p>
-    </div>
-    <p id="temp-feels-like"></p>
-    </div>
+        <a href="usersettings.html"><i class="fa-solid fa-gear"></i></a>
     </section>
+
+    <section id="current-weather">
+        <div id="location-and-search">
+            <div id="location">
+                <i class="fa-solid fa-location-dot"></i>
+                <select name="cities">
+                <option>Kolding</option>
+                <!-- Dynamic options depending on user favorites and/or location -->
+                </select>
+                <i class="fa-regular fa-star"></i>
+                <div id="search"><input type="search"></div>
+            </div>
+        </div>
+        <div id="current-weather-conditions">
+            <div id="weather-temp-condition">
+                <img src="" alt="">
+                <p id="current-temp">°C</p>
+                <p id="condition"></p>
+            </div>
+            <p id="temp-feels-like"></p>
+        </div>
+    </section>
+
     <section id="hourly-forecast">
         <div class="hourly-weather">
             <p>12.00</p>
             <img src="" alt="">
         </div>
     </section>
+
     <section id="precip-today"></section>
+    
     <section id="clothes-suggestions-section">
         <h2>Today's Suggestions</h2>
          <a href="usersettings.html"><i class="fa-solid fa-gear"></i></a>

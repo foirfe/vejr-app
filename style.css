@@ -18,14 +18,11 @@ body{
     background: var(--main-bg-color);
     color: var(--main-font-color);
     font-family: var(--primary-font);
+    padding: 3rem 5rem;
 }
 /* FRONT PAGE */
 
 /* USER SETTINGS */
-
-.hidden {
-    display: none !important;
-}
 
 .divider {
     border: none;
