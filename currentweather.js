@@ -40,10 +40,10 @@ function getCurrentWeather(cityOrCoords) {
 
       // Ekstra information
       const windSpeed = Math.round(data.current.wind_kph / 3.6);
-      windEl.textContent = "Wind: " + windSpeed + " m/s";
-      uvEl.textContent = "UV index: " + data.current.uv;
-      humidityEl.textContent = "Humidity: " + data.current.humidity + "%";
-      visibilityEl.textContent = "Visibility: " + data.current.vis_km + " km";
+      windEl.innerHTML = '<span class="info-label">Wind</span><span class="info-value">' + windSpeed + ' m/s</span>';
+      uvEl.innerHTML = '<span class="info-label">UV index</span><span class="info-value">' + data.current.uv + '</span>';
+      humidityEl.innerHTML = '<span class="info-label">Humidity</span><span class="info-value">' + data.current.humidity + '%</span>';
+      visibilityEl.innerHTML = '<span class="info-label">Visibility</span><span class="info-value">' + data.current.vis_km + ' km</span>';
 
       //Nedbør
       precipEl.textContent = "Precipitation today: " + data.forecast.forecastday[0].day.totalprecip_mm + " mm";

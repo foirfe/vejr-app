@@ -59,6 +59,38 @@ body{
 
 /* CURRENT WEATHER DETAILS */
 
+#extra-information {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-around;
+    width: 100%;
+
+    .information-box {
+        background-color: var(--btn-hover-color);
+        color: var(--dark-font-color);
+        padding: 1rem;
+        border-radius: 5px;
+        min-width: 10.875rem;
+        height: 5rem;
+        text-align: center;
+    }
+}
+
+.info-label {
+  display: block;      
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.2rem;
+}
+.info-value {
+  display: block;      
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+
 /* 5-DAY FORECAST */
 
 
