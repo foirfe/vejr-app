@@ -1,6 +1,4 @@
-
 // Find elementerne i HTML
-
 const tempEl = document.getElementById("current-temp");
 const conditionEl = document.getElementById("condition");
 const feelsLikeEl = document.getElementById("temp-feels-like");
@@ -13,24 +11,20 @@ const uvEl = document.getElementById("uv-information");
 const humidityEl = document.getElementById("humidity-information");
 const visibilityEl = document.getElementById("visibility-information");
 
-
 // Funktion til at hente og vise vejret
-
 function getCurrentWeather(cityOrCoords) {
-  // Hvis vi får et objekt med lat/lon, konverter til "lat,lon"
   let query;
   if (typeof cityOrCoords === "object") {
     query = cityOrCoords.lat + "," + cityOrCoords.lon;
   } else {
-    query = cityOrCoords; // ellers er det bare et bynavn
+    query = cityOrCoords;
   }
 
-  const url = `${apiUrl}?key=${apiKey}&q=${query}&days=1`;
+  const url = `${apiUrl}?key=${apiKey}&q=${query}&days=2`;
 
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      // Tjek om API returnerede en fejl
       if (data.error) {
         console.error("API-fejl:", data.error.message);
         return;
@@ -51,8 +45,22 @@ function getCurrentWeather(cityOrCoords) {
       visibilityEl.textContent = "Visibility: " + data.current.vis_km + " km";
 
       // Hourly forecast
-      hourlyContainer.innerHTML = ""; // ryd container først
-      data.forecast.forecastday[0].hour.forEach(hourData => {
+      hourlyContainer.innerHTML = "";
+      const now = new Date();
+      const currentTime = now.getTime();
+
+      // Hent timer fra dag 0 og dag 1 for at kunne vise de næste 24 timer
+      const allHours = [
+        ...data.forecast.forecastday[0].hour,
+        ...(data.forecast.forecastday[1]?.hour || [])
+      ];
+
+      const next24Hours = allHours.filter(hourData => {
+        const hourTime = new Date(hourData.time).getTime();
+        return hourTime >= currentTime && hourTime <= currentTime + 24 * 60 * 60 * 1000;
+      });
+
+      next24Hours.forEach(hourData => {
         const hourDiv = document.createElement("div");
         hourDiv.classList.add("hourly-weather");
         hourDiv.innerHTML = `
@@ -66,14 +74,10 @@ function getCurrentWeather(cityOrCoords) {
     .catch(error => console.error("Noget gik galt:", error));
 }
 
-
 // Vis Kolding som default
-
 getCurrentWeather("Kolding");
 
-
 // Lyt på ændringer fra search-systemet
-
 document.getElementById("location-and-search").addEventListener("city:changed", function(e) {
   const city = e.detail; 
   getCurrentWeather(city);
