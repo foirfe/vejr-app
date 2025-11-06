@@ -44,7 +44,8 @@ function getCurrentWeather(cityOrCoords) {
       iconEl.alt = data.current.condition.text;
 
       // Ekstra information
-      windEl.textContent = "Wind: " + data.current.wind_kph + " kph";
+      const windSpeed = Math.round(data.current.wind_kph / 3.6);
+      windEl.textContent = "Wind: " + windSpeed + " m/s";
       uvEl.textContent = "UV index: " + data.current.uv;
       humidityEl.textContent = "Humidity: " + data.current.humidity + "%";
       visibilityEl.textContent = "Visibility: " + data.current.vis_km + " km";
