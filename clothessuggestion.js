@@ -81,7 +81,7 @@ function chooseClothes(items, flags) {
     if (found) chosen.push(found);
   }
   var onepiece = pool.find(function (item) { return item.type === "onepiece"; });
-  pick("top");
+  if (!onepiece)pick("top");
   if (!onepiece) pick("bottom");
   pick("outer");
   pick("footwear");

@@ -23,8 +23,9 @@
     {"id": "sneakers_f", "name": "Sneakers", "gender": "female", "type": "footwear", "tags": ["windy", "hot", "mild"], "image": "/assets/kvinde/kvindeefterforsneakers.png"},
     {"id": "winter_jacket_f", "name": "Winter Jacket", "gender": "female", "type": "outer", "tags": ["cold", "snow"], "image": "/assets/kvinde/kvindevinterjakke.png"},
     {"id": "west_m", "name": "West", "gender": "male", "type": "outer", "tags": ["mild"], "image": "/assets/mand/mandefterforvest.png"},
-    {"id": "winter_jacket_m", "name": "Winter Jacket", "gender": "male", "tags": ["snow", "cold"], "image": "/assets/mand/mandvinterjakke.png"},
-    {"id": "rain_coat", "name": "Rain Coat", "gender": "neutral", "tags": ["rain"], "image": "/assets/non-binary/neutralefterforregnjakke.png"},
-    {"id": "winter_jacket_n", "name": "Winter Jacket", "gender": "neutral", "tags": ["snow", "cold"], "image":"/assets/non-binary/neutralvinterjakke.png"}
+    {"id": "winter_jacket_m", "name": "Winter Jacket", "gender": "male","type":"outer", "tags": ["snow", "cold"], "image": "/assets/mand/mandvinterjakke.png"},
+    {"id": "rain_coat", "name": "Rain Coat", "gender": "neutral", "type": "outer", "tags": ["rain"], "image": "/assets/non-binary/neutralefterforregnjakke.png"},
+    {"id": "winter_jacket_n", "name": "Winter Jacket", "gender": "neutral", "type":"outer", "tags": ["snow", "cold"], "image":"/assets/non-binary/neutralvinterjakke.png"},
+    {"id": "t_shirt", "name": "T-Shirt", "gender": "male","type": "top", "tags": ["hot","sunny"], "image": "/assets/mand/mandsommertshirt.png"}
   ]
 }

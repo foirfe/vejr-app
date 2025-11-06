@@ -4,9 +4,9 @@
   const MIN_CHARS = 3;       // SEARCH STARTS FIRST AFTER THIS MANY CHARACTERS
   const DEBOUNCE_MS = 300;   // WAIT TIME BEFORE CALLING THE SEARCH API
   //DOM ELEMENTS
-  const locationBox = document.getElementById("location");
+  const locationBox = document.getElementById("location-and-search");
   const citySelect = locationBox.querySelector("select[name='cities']");
-  const searchInput = locationBox.querySelector("#search input[type='search']");
+  const searchInput = locationBox.querySelector("#search-input");
   const favoriteIcon = locationBox.querySelector(".fa-star");
   // LOCAL STORAGE KEYS 
   const LS_FAVORITES = "favorites";   // ARRAY OF FAVORITE CITIES
