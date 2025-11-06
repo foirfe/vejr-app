@@ -20,6 +20,34 @@
         clothing: form.clothing_pref.value
       };
 
+      // Hvis brugeren har valgt "Yes" til location
+        if (user.location === 'yes') {
+            if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                const coords = {
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude
+                };
+                localStorage.setItem('userLocation', JSON.stringify(coords));
+                console.log('Location saved:', coords);
+                },
+                (error) => {
+                console.warn('Location error:', error);
+                statusText.textContent = 'Could not get location permission.';
+                setTimeout(() => (statusText.textContent = ''), 5000);
+                }
+            );
+            } else {
+            statusText.textContent = 'Geolocation not supported.';
+            setTimeout(() => (statusText.textContent = ''), 5000);
+            }
+        } else if (user.location === 'no') {
+            // Hvis brugeren vælger "No", fjernes tidligere lokation
+            localStorage.removeItem('userLocation');
+            console.log('Location data removed');
+        }
+
       localStorage.setItem('userData', JSON.stringify(user));
 
       statusText.textContent = 'Data saved!';
@@ -56,10 +84,11 @@
 
 // Reset-knap: rydder alt og fjerner fra localStorage
 resetBtn.addEventListener('click', () => {
-localStorage.removeItem('userData');
-form.reset();
-statusText.textContent = 'All data reset!';
-setTimeout(() => (statusText.textContent = ''), 5000);
+    localStorage.removeItem('userData');
+    localStorage.removeItem('userLocation');
+    form.reset();
+    statusText.textContent = 'All data reset!';
+    setTimeout(() => (statusText.textContent = ''), 5000);
 });
 
 
