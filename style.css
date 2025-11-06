@@ -117,35 +117,38 @@ body{
 /* CURRENT WEATHER DETAILS */
 
 #extra-information {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: space-around;
-    width: 100%;
-    margin: 1.5rem 0;
-    align-items: stretch;
-
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 100%;
+  margin: 1.5rem 0;
+  align-items: stretch;
 }
 
 #extra-information .information-box {
-    background-color: var(--btn-hover-color);
-    color: var(--dark-font-color);
-    padding: 1rem;
-    border-radius: 5px;
-    flex: 1 1 0; 
-    min-width: 12rem; 
-    min-height: 5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  background-color: var(--btn-hover-color);
+  color: var(--dark-font-color);
+  padding: 1rem;
+  border-radius: 5px;
+  min-width: 0; 
+  min-height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
+@media (max-width: 900px) {
+  #extra-information {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
 @media (max-width: 600px) {
-    #extra-information .information-box {
-        flex: 0 0 calc(50% - 0.5rem); 
-        min-width: 0;
-    }
+  #extra-information {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .info-label {
