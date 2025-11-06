@@ -3,9 +3,6 @@
 var upcomingDaysSection = document.getElementById("upcoming-days-forecast");
 var locationAndSearch = document.getElementById("location-and-search");
 // KILOMETERS PER HOUR TO METERS PER SECOND
-function kphToMs(kph) {
-  return Math.round(kph / 3.6);
-}
 function renderForecast(days) {
   // REMOVES PLACEHOLDERS THAT WERE USED FOR STYLING
   var oldItems = upcomingDaysSection.querySelectorAll(".upcoming-day");
