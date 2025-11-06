@@ -72,7 +72,7 @@
       left: 0,
       right: 0,
       top: "calc(100% + 6px)",
-      background: `var(--main-bg-color),`,
+      background: `var(--main-bg-color)`,
       border: "1px solid rgba(0,0,0,.15)",
       borderRadius: "8px",
       listStyle: "none",
