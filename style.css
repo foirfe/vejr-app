@@ -21,6 +21,7 @@ body{
     padding: 3rem 5rem;
 }
 /* FRONT PAGE */
+/* CURRENT WEATHER AND SEARCH */
 #search {
   position: relative;
   display: inline-block;
@@ -43,6 +44,24 @@ body{
 #search input.has-text + .icon {
   opacity: 0;
 }
+
+
+/*HOURLY FORECAST*/
+
+
+
+
+
+
+
+
+/* CLOTHES RECOMMENDATION */
+
+/* CURRENT WEATHER DETAILS */
+
+/* 5-DAY FORECAST */
+
+
 
 /* USER SETTINGS */
 

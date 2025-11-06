@@ -113,7 +113,7 @@ function renderClothesSuggestions(items) {
   items.forEach(function (item) {
     var el = document.createElement("div");
     el.className = "clothes-item";
-    el.innerHTML = '<img src="' + item.image + '" alt="' + item.name + '"><p>' + item.name + '</p>';
+    el.innerHTML = '<img src="' + item.image + '" alt="' + item.name + '">';
     box.appendChild(el);
   });
 }
